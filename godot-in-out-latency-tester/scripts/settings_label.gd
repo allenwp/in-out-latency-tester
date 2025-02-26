@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 	var frameQueueSize = ProjectSettings.get_setting("rendering/rendering_device/vsync/frame_queue_size", NAN);
 	var swapchainCount = ProjectSettings.get_setting("rendering/rendering_device/vsync/swapchain_image_count", NAN);
 	
-	text = "V-Sync: {vsyncMode} ({vsyncName}) | Mode: {windowMode} ({windowModeName}) | Refresh rate: {refreshRate} hz".format({
+	text = "V-Sync: {vsyncMode} ({vsyncName}) | Mode: {windowMode} ({windowModeName}) | Refresh rate: {refreshRate} hz\n".format({
 		"vsyncMode": vsyncMode,
 		"vsyncName": VSYNC_NAMES[vsyncMode],
 		"windowMode": windowMode,
@@ -32,9 +32,9 @@ func _process(_delta: float) -> void:
 	});
 	
 	if renderingDevice:
-		text += " | frame_queue_size = {frameQueueSize} | swapchain_image_count = {swapchainCount}".format({
+		text += "frame_queue_size = {frameQueueSize} | swapchain_image_count = {swapchainCount}".format({
 			"frameQueueSize": frameQueueSize,
 			"swapchainCount": swapchainCount
 		});
 	else:
-		text += " | frame queue/swapchain settings unavailable";
+		text += "frame queue/swapchain settings unavailable";

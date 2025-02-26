@@ -1,17 +1,17 @@
 [gd_scene load_steps=12 format=3 uid="uid://bstb65rhtbt4r"]
 
-[ext_resource type="Script" path="res://scripts/frame_indicators.gd" id="1_74obp"]
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_dj8ur"]
-[ext_resource type="Script" path="res://scripts/system_info_label.gd" id="3_xucow"]
-[ext_resource type="Script" path="res://scripts/settings_label.gd" id="4_jhsnb"]
-[ext_resource type="Script" path="res://scripts/frame_stat_label.gd" id="5_pmlst"]
-[ext_resource type="Script" path="res://scripts/motion_detection.gd" id="6_n0lbv"]
+[ext_resource type="Script" uid="uid://i74on4u8c56n" path="res://scripts/frame_indicators.gd" id="1_74obp"]
+[ext_resource type="Script" uid="uid://b6ccsescvyn60" path="res://scripts/main.gd" id="1_dj8ur"]
+[ext_resource type="Script" uid="uid://cu8mshc3x6efh" path="res://scripts/system_info_label.gd" id="3_xucow"]
+[ext_resource type="Script" uid="uid://cvbq2gggav6m" path="res://scripts/settings_label.gd" id="4_jhsnb"]
+[ext_resource type="Script" uid="uid://qvcebt5avgwo" path="res://scripts/frame_stat_label.gd" id="5_pmlst"]
+[ext_resource type="Script" uid="uid://dv4bgmxb451m2" path="res://scripts/motion_detection.gd" id="6_n0lbv"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_c5la5"]
+[sub_resource type="LabelSettings" id="LabelSettings_6qafr"]
 line_spacing = 2.0
 font_size = 14
 
-[sub_resource type="LabelSettings" id="LabelSettings_6qafr"]
+[sub_resource type="LabelSettings" id="LabelSettings_c5la5"]
 line_spacing = 2.0
 font_size = 14
 
@@ -60,29 +60,32 @@ offset_bottom = 720.0
 
 [node name="InfoText" type="Node" parent="."]
 
-[node name="SystemInfoLabel" type="Label" parent="InfoText"]
-offset_left = 55.0
-offset_top = 51.0
-offset_right = 951.0
-offset_bottom = 75.0
-text = "System info"
-label_settings = SubResource("LabelSettings_c5la5")
-script = ExtResource("3_xucow")
-
 [node name="SettingsLabel" type="Label" parent="InfoText"]
 offset_left = 55.0
 offset_top = 27.0
 offset_right = 951.0
 offset_bottom = 51.0
-text = "Application settings"
+text = "Application settings
+frame info"
 label_settings = SubResource("LabelSettings_6qafr")
 script = ExtResource("4_jhsnb")
 
+[node name="SystemInfoLabel" type="Label" parent="InfoText"]
+offset_left = 55.0
+offset_top = 71.0
+offset_right = 951.0
+offset_bottom = 95.0
+pivot_offset = Vector2(86, 13)
+text = "System info"
+label_settings = SubResource("LabelSettings_c5la5")
+script = ExtResource("3_xucow")
+
 [node name="FrameStatLabel" type="Label" parent="InfoText"]
 offset_left = 55.0
-offset_top = 75.0
+offset_top = 95.0
 offset_right = 951.0
-offset_bottom = 117.0
+offset_bottom = 137.0
+pivot_offset = Vector2(86, -11)
 text = "Frame stats
 "
 label_settings = SubResource("LabelSettings_ldklu")
